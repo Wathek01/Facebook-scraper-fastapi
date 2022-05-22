@@ -1,0 +1,5 @@
+pandas
+pytest
+facebook_scraper
+fastapi
+pydantic

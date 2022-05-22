@@ -1,0 +1,17 @@
+# 
+FROM python:3.9
+
+# 
+WORKDIR /FASTAPIDEPLOY
+
+# 
+COPY ./requirements.txt /FASTAPIDEPLOY/requirements.txt
+
+# 
+RUN pip install --no-cache-dir --upgrade -r /FASTAPIDEPLOY/requirements.txt
+
+# 
+COPY ./app /FASTAPIDEPLOY/app/api
+
+# 
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
